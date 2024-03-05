@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country flag</title>
+    <style>
+     *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+     }
+
+     body{
+        background-color: rgb(131, 131, 217);
+     }
+
+    .container{
+        /* border: 2px solid black; */
+        width: 80%;
+        height: 50vh;
+        margin-top: 20vh;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-left: 10vw;
+        background-color: rgb(226, 144, 56);
+    }
+
+    .input{
+        /* border: 2px solid green; */
+        width: 30%;
+        height: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .input input{
+        /* border: 1.5px solid black; */
+        width: 60%;
+        height: 5vh;
+    }
+
+    button{
+        width: 8vw;
+        height: 5vh;
+        background-color: yellowgreen;
+        border: none;
+    }
+    .image{
+        /* border: 2px solid green; */
+        width: 30%;
+        height: 80%;
+        /* margin: auto; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image img{
+        /* border: 2px solid black; */
+        width: 80%;
+        height: 80%;
+    }
+
+   #para{
+    /* border: 2px solid black; */
+    width: 40%;
+    height: 10vh;
+    margin: auto;
+    font-size: 30px;
+    font-weight: 600;
+    color: rgb(37, 22, 15);
+
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+          <div class="input" >
+             <input type="text">
+              <button id="btn">Submit</button>
+          </div>
+          <div class="image">
+               <img src="https://flagcdn.com/w640/in.png" alt="country not found" id="img">
+              
+          </div>
+
+    </div>
+
+    <div id="para">
+
+    </div>
+
+    <script src="country_flag.js"></script>
+
+    <script>
+        
+        let btn = document.getElementById("btn");
+        let inp = document.querySelector("input");
+        let img = document.getElementById("img");
+        let para = document.getElementById("para");
+
+        btn.addEventListener("click",()=>{
+            let val = inp.value;
+            inp.value=""
+            inp.focus()
+           for(let i in obj){
+             if(obj[i].toLowerCase()==val){
+                 img.src = `https://flagcdn.com/w640/${i}.png`
+                //  if(obj[i].toLowerCase()=="pakistan"){
+                //    para.innerText = "Pakistan ki maa ka B&*S$A , YE BHIKHARI desh h."
+                  
+                //  }else{
+                //     para.innerText = ""
+                //  }
+             }
+           }  
+
+        })
+
+    
+       
+     
+    </script>
+</body>
+</html>
